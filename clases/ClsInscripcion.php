@@ -16,12 +16,48 @@
 		}
 
 
-		function ingreso_formulario_inscripcion($candidato, $muni, $foto, $partida, $const, $penal, $poli, $ciu){
-			$sql = "insert into formulario_inscripcion(id_candidato, id_municipio, fecha, foto_dpi, partida, constancia, penal, policiaco, no_ciudadano)";
-			$sql.= " values($candidato, $muni, curdate(), $foto, $partida, $const, $penal, $poli, $ciu);";
+		function ingreso_formulario_inscripcion($candidato, $muni){
+			$sql = "insert into formulario_inscripcion(id_candidato, id_municipio, fecha)";
+			$sql.= " values($candidato, $muni, curdate());";
 			$result = $this->exec_sql($sql);
 			return $result;
 		}
+
+
+
+		function ingreso_requisitos($form, $requisitos, $total){
+
+			$total = $total - 2;
+			$nuevo = 0;
+			$aux = 1;
+			
+			for($i = $total; $i >= 0; $i--){
+
+		$sql = "select id_rq from requisito ORDER BY id_rq DESC LIMIT $i,1;";
+		$res = $this->exec_query($sql);
+
+		foreach ($res as $show) {
+			$nuevo = $show['id_rq'];
+		}
+
+
+				for($x = 0; $x <= $total; $x++){
+							if($requisitos[$aux] == $nuevo){
+
+								$sql1 = "insert into form_requisito(id_formulario, id_rq) values($form, $nuevo);";
+								$tt = $this->exec_sql($sql1);
+								
+							}//END IF
+							$aux++;
+						}//END FOR
+		$aux = 1;
+
+	}//END FOR
+
+			return 0;
+		}
+
+
 
 		function ingreso_tramite($form, $user){
 			$sql = "insert into tramite(id_estado, id_usuario, id_formulario, recibido, comentario)";
@@ -227,8 +263,18 @@
 
 					return $html;
 
+				}
 
-		}
+
+				function no_num($mensaje){
+				?>
+				<script>
+					alert("<?php echo $mensaje; ?>");
+					location.href ="../Formulario-inscripcion/html_formularioC.php";
+				</script>
+				<?php
+				}
+
 
 	
 	}

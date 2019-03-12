@@ -85,7 +85,7 @@ if(isset($_SESSION['loginUser'])){
           <a class="nav-link" href="#" >Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
-          <a class="nav-link" href="Formulario-inscripcion/html_formularioA.php">Inscripcion</a>
+          <a class="nav-link" href="Formulario-inscripcion/html_formularioE.php">Inscripcion</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" href="#">Documentación</a>
@@ -111,7 +111,7 @@ if(isset($_SESSION['loginUser'])){
           <a class="nav-link" href="../principal.php">Inicio </a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
-          <a class="nav-link" href="#">Inscripcion<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="Formulario-inscripcion/html_formularioC.php">Inscripcion<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" href="#">Documentación</a>
