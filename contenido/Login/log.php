@@ -29,7 +29,7 @@
 				?>
 		
 				<script >
-					location.href ="../principalAdmin.php";
+					location.href ="../principal.php";
 				</script>
 
 	<?php
@@ -44,7 +44,7 @@
 								?>
 						
 								<script >
-									location.href ="../principalEmpleado.php";
+									location.href ="../principal.php";
 								</script>
 
 					<?php
@@ -70,7 +70,7 @@
 		?>
 		<script >
 			alert("Contraseña/Usuario Incorrecto");
-			location.href ="login.php";
+			location.href ="html_login.php";
 		</script>
 
 
