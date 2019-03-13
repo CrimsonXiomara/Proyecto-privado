@@ -74,7 +74,7 @@ if(isset($_SESSION['loginUser'])){
           </li>
 
 <?php 
-    }// CIERRE IF DE NIVEL ADMINISTRADOR
+    }
 
     if($nivel == 2){// NIVEL EMPLEADO
  ?>
@@ -99,7 +99,7 @@ if(isset($_SESSION['loginUser'])){
 
 
  <?php 
-    } // CIERRE IF DE NIVEL EMPLEADO
+    } 
 
     if($nivel == 3){ //NIVEL CANDIDATO
 
@@ -114,13 +114,13 @@ if(isset($_SESSION['loginUser'])){
           <a class="nav-link" href="Formulario-inscripcion/html_formularioC.php">Inscripcion<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="#">Documentación</a>
+          <a class="nav-link" href="Documentacion/html_documentacionC.php">Documentación</a>
         </li>
 
 
  <?php 
   
-  } // CIERRE IF DE NIVLE CANDIDATO
+  } 
 
  ?>
 

@@ -1,7 +1,7 @@
 <?php
 
-  require_once("../../clases/ClsConex.php");
-  include("archivoJsI.php");
+  require_once("../../../clases/ClsConex.php");
+  include("../archivoJsI.php");
 
 session_start();
 $usuario_actual = $_SESSION['loginUser'];
@@ -13,7 +13,7 @@ if(isset($_SESSION['loginUser'])){
 	
 	<script >
           alert("Tiene que iniciar Sesion para acceder a esta página");
-          location.href ="../login/login.php";
+          location.href ="../../Login/html_login.php";
      </script>
 
      <?php
@@ -61,18 +61,18 @@ if(isset($_SESSION['loginUser'])){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="../principal.php">Inicio </a>
+          <a class="nav-link" href="../../principal.php">Inicio </a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
           <a class="nav-link" href="#">Inscripcion<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="#">Documentación</a>
+          <a class="nav-link" href="">Documentación</a>
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" hidden>
-        <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href = '../login/cerrarSesion.php'">Cerrar Sesión</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href = '../../Login/cerrarSesion.php'">Cerrar Sesión</button>
       </div>
     </div>
   </nav>

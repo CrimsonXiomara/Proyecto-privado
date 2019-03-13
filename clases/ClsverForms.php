@@ -9,30 +9,42 @@ include('ClsConex.php');
 	class ClsverForms extends ClsConex
 	{
 		
-		function cant_documentos($form){
+		function cant_documentos($tramite){
 
-			$f = $p = $c = $pe = $l = $n = 0;
+			$total_n = 0;
+			$sql1 = "select count(*) as total from requisito;";
+            $rs  = $this->exec_query($sql1);
+            foreach ($rs as $lista) {
+                  $total_n = $lista['total'];
+                }
 
-			$sql = "select foto_dpi, partida, constancia, penal, policiaco, no_ciudadano ";
-			$sql.= "from formulario_inscripcion ";
-			$sql.= "where id_formulario = $form;";
+
+			$sql = "select count(R.id_rq) tot ";
+			$sql.= "from form_requisito R, formulario_inscripcion F, tramite T ";
+			$sql.= "where T.id_tramite = $tramite and T.id_formulario = F.id_formulario and R.id_formulario = F.id_formulario;";
 			$result = $this->exec_query($sql);
 			if($result){
-			foreach($result as $row){
-				$f = $row["foto_dpi"];
-				$p = $row["partida"];
-				$c = $row["constancia"];
-				$pe = $row["penal"];
-				$l = $row["policiaco"];
-				$n = $row["no_ciudadano"];
-			}
+				foreach($result as $row){
+					$total = $row['tot'];
+				}
 
-			$total = $f + $p + $c + $pe + $l + $n; 
-			}else {$total = $form;}
+			}else {$total = 0;}
 
 
 			return $total;
 
+		}
+
+		function cant_doc_requisitos(){
+			$sql = "select count(*) as total from requisito;";
+			$result = $this->exec_query($sql);
+			if($result){
+				foreach ($result as $show) {
+					$total = $show['total'];
+				}
+			}else{  $total = 0; }
+
+			return $total;
 		}
 
 		function no_formulario($tramite){
@@ -125,10 +137,23 @@ include('ClsConex.php');
 		}
 
 
-	}	
-	
+		function verificar_requisitos($rq, $array, $tam){
+
+			$a = 0;
+
+			for($i = 0; $i <= $tam; $i++){
+				if($array[$i] == $rq){
+					$a = 1;
+				}
+			}
+
+			return $a;
+		}//	END FUNCTION
 
 
+
+
+	}//END CLASE	
 
 		/*
 		
