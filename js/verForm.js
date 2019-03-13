@@ -8,7 +8,7 @@
 
 				let search = $('#search').val();
 				$.ajax({
-					url: 'search.php',
+					url: 'searchE.php',
 					type: 'POST',
 					data: { search }, 
 					success: function(response){

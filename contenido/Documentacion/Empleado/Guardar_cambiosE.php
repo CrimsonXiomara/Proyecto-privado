@@ -45,6 +45,9 @@
 	}
 
 
+	$cantidad = $clsver->cant_documentos($tm);
+	if($cantidad == $t_r){ $res = $clsver->update_estado_tramite($tm, 1); }
+
 
 	if($_FILES["archivo"]["error"]>0){
 		echo "Error al cargar archivo";

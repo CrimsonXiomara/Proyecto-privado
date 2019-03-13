@@ -114,7 +114,7 @@ if(isset($_SESSION['loginUser'])){
           <a class="nav-link" href="Formulario-inscripcion/html_formularioC.php">Inscripcion<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="Documentacion/html_documentacionC.php">Documentación</a>
+          <a class="nav-link" href="Documentacion/Candidato/html_documentacionC.php">Documentación</a>
         </li>
 
 

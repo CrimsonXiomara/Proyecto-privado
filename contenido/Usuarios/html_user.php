@@ -55,10 +55,10 @@ $conex = new ClsUser();
           <a class="nav-link" href="../principalA.php" >Inicio</a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
-          <a class="nav-link" href="../inscripcion/inscripcion.php">Inscripcion</a>
+          <a class="nav-link" href="../Formulario-inscripcion/html_formularioE.php">Inscripcion</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="../verFormularios/index_verFormularios.php">Documentación</a>
+            <a class="nav-link" href="../Formulario-inscripcion/html_formularioE.php">Documentación</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" href="../Reportes/R_main.php">Reportes</a>

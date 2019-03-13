@@ -63,8 +63,8 @@ include('ClsConex.php');
 		}
 
 		function obtener_candidato($form){
-			$sql = "select id_candidato";
-			$sql.= "from formulario_inscripcion";
+			$sql = "select id_candidato ";
+			$sql.= "from formulario_inscripcion ";
 			$sql.= "where id_formulario = $form";
 			$result = $this->exec_query($sql);
 			if($result){
@@ -151,7 +151,17 @@ include('ClsConex.php');
 		}//	END FUNCTION
 
 
+		function ingresar_requisitos($requisito, $form){
 
+			$sql = "insert into form_requisito(id_formulario, id_rq) ";
+			$sql.= " values($form, $requisito);";
+			$result = $this->exec_sql($sql);
+
+			return $result;
+
+		}
+
+	
 
 	}//END CLASE	
 

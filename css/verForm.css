@@ -1,18 +1,12 @@
-.title{
-	border-radius: 4px;
-    margin-top: 20px;
-    padding: 30px;
-    background: #000; 
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-
-
-.app{
-    border-radius: 4px;
-    margin-top: 20px;
-    padding: 30px;
-    background: #EC8585;
-
+.container{
+	width: 98%;
+	margin: auto;
 }
 
 

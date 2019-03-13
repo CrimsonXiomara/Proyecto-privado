@@ -83,24 +83,18 @@
 		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		      <ul class="navbar-nav mr-auto">
 		        <li class="nav-item" routerLinkActive="active">
-		          <a class="nav-link" href="../principalEmpleado.php" >Inicio</a>
+		          <a class="nav-link" href="../../principal.php" >Inicio</a>
 		        </li>
 		        <li class="nav-item" routerLinkActive="active"> 
-		          <a class="nav-link" href="../inscripcion/inscripcion.php">Inscripcion</a>
+		          <a class="nav-link" href="../../Formulario-inscripcion/html_formularioC.php">Inscripcion</a>
 		        </li>
 		        <li class="nav-item" routerLinkActive="active">
-		            <a class="nav-link" href="../verFormularios/index_verFormularios.php">Documentación</a>
-		          </li>
-		            <li class="nav-item" routerLinkActive="active">
-		            <a class="nav-link" href="../Reportes/R_main.php">Reportes<span class="sr-only">(current)</span></a>
-		          </li>
-		          <li class="nav-item" routerLinkActive="active">
-		            <a class="nav-link" href="#">Usuarios</a>
+		            <a class="nav-link" href="#">Documentación<span class="sr-only">(current)</span></a>
 		          </li>
 		      </ul>
 		      <div class="form-inline my-2 my-lg-0">
 		        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" hidden>
-		        <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href = '../Login/cerrarSesion.php'">Cerrar Sesión</button>
+		        <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href = '../../Login/cerrarSesion.php'">Cerrar Sesión</button>
 		      </div>
 		    </div>
 		  </nav>
@@ -112,7 +106,7 @@
 				<div class="col-lg-6">
 					<div class="card">
 						<div class="card-body">
-							<form method="POST" action="Guardar_cambiosC.php" enctype="multipart/form-data" autocomplete="off" >
+							<form method="POST" action="Guardar_cambiosE.php" enctype="multipart/form-data" autocomplete="off" >
 								<table>
 
 										<?php 
@@ -173,7 +167,7 @@
 								<center>
 								<div class="form-group">
 									<button class="btn btn-secondary" type="submit">Agregar</button>
-									<button class="btn btn-warning"   id="btn_regresar"><a href="html_documentacionC.php" style="text-decoration: none; color: #fff;">Regresar</a></button>
+									<button class="btn btn-warning"   id="btn_regresar"><a href="html_documentacionE.php" style="text-decoration: none; color: #fff;">Regresar</a></button>
 								</div>
 								</center>
 

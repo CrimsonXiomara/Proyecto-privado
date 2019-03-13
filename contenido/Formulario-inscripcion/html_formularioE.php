@@ -13,7 +13,7 @@ if(isset($_SESSION['loginUser'])){
 	
 	<script >
           alert("Tiene que iniciar Sesion para acceder a esta página");
-          location.href ="../Login/html_login.php";
+          location.href ="../../Login/html_login.php";
      </script>
 
      <?php
@@ -61,14 +61,20 @@ if(isset($_SESSION['loginUser'])){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="../../principal.php">Inicio </a>
+          <a class="nav-link" href="#" >Inicio </a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
-          <a class="nav-link" href="#">Inscripcion<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Inscripcion <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="../Documentacion/Candidato/html_documentacionC.php">Documentación</a>
-        </li>
+            <a class="nav-link" href="../Documentacion/Empleado/html_documentacionE.php">Documentación</a>
+          </li>
+            <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" href="#">Reportes</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" href="../Usuarios/html_user.php">Usuarios</a>
+          </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" hidden>
@@ -99,7 +105,7 @@ if(isset($_SESSION['loginUser'])){
           <div class="card-header bg-dark" style="text-align: center;"><label style="font-family: verdana; font-weight: bold; color: #fff;">FORMULARIO DE INSCRIPCIÓN</label></div>
           <div class="card-body">
 
-            <form  method="POST" action="enviarinscripcionC.php" enctype="multipart/form-data" autocomplete=""> <!--INICIO FORM id="form-inscripcion"-->
+            <form  method="POST" action="enviarinscripcionE.php" enctype="multipart/form-data" autocomplete=""> <!--INICIO FORM id="form-inscripcion"-->
 
               <div class="card p-2">
               <div class="card-body">
@@ -192,10 +198,14 @@ if(isset($_SESSION['loginUser'])){
                   ?>
 
                 </select>
+                
 
-                &nbsp;  &nbsp; 
+              </div>
 
 
+
+                <div class="input-group mb-3 p-3">     
+                
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01">Municipio</label>
                 </div>
@@ -218,7 +228,32 @@ if(isset($_SESSION['loginUser'])){
                 </select>
                 
 
-              </div>
+                     &nbsp;  &nbsp; 
+                
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Partido</label>
+                </div>
+                <select class="custom-select" id="partido" name="partido"  required >
+                  <option value="0" selected>Choose...</option>
+
+                  <?php 
+                    $sql = "select * from partido";
+                    $resultado = $conex->visualizar_datos($sql);
+
+                    foreach ($resultado as $mostrar) {
+        
+                  ?>
+                  <option value='<?php echo $mostrar['id_partido'] ?>' >  <?php echo $mostrar['desc_partido'] ?> </option>
+                  <?php 
+
+                    }
+                  ?>
+
+                </select>
+                
+
+
+                </div>
 
 
 

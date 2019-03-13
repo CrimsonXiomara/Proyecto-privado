@@ -26,7 +26,7 @@ if(isset($_SESSION['loginUser'])){
 	 <div class="loginbox">
     <img src="../../img/user.png" class="avatar">
         <h1>Login Here</h1>
-        <form method="get" action="Log.php">
+        <form method="get" action="Log.php" autocomplete="off">
             <p>Username</p>
             <input type="text" name="user" placeholder="Enter Username">
             <p>Password</p>

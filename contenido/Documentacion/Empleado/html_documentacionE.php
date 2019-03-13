@@ -1,6 +1,7 @@
 <?php
 
 	require_once("../../../clases/ClsverForms.php");
+	include("archivoJsF.php");
 
 	session_start();
 	$usuario_actual = $_SESSION['loginUser'];
@@ -31,7 +32,7 @@
 	<title>DOCUMENTACIÓN</title>
 	  <script src="../../../js/jquery-3.1.1.min.js"></script>
 	  <script src="../../../js/bootstrap.min.js"></script>
-	  <script src="../../../js/verFormC.js"></script>
+	  <script src="../../../js/verForm.js"></script>
 	  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 	  <!-- CSS -->
@@ -39,12 +40,20 @@
 	  <link rel="stylesheet" type="text/css" href="../../../css/verForm.css">
 	  <link rel="stylesheet" type="text/css" href="../../../css/newfondo.css">
 
+	  <script >
+
+  			$(function(){
+  				document.getElementById("rev").disabled = true;
+
+  			});
+  </script>
+
 </head>
 <body>
 	<header>
 	
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		    <a class="navbar-brand">TRIBUNAL SUPREMO ELECTORAL</a>
+		    <a class="navbar-brand" style="color: white;"><strong>TRIBUNAL SUPREMO ELECTORAL</strong></a>
 		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -52,13 +61,19 @@
 		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		      <ul class="navbar-nav mr-auto">
 		        <li class="nav-item" routerLinkActive="active">
-		          <a class="nav-link" href="../../principal.php" >Inicio</a>
+		          <a class="nav-link" href="../../principal.php" >Inicio </a>
 		        </li>
 		        <li class="nav-item" routerLinkActive="active"> 
-		          <a class="nav-link" href="../../Formulario-inscripcion/html_formularioC.php">Inscripcion</a>
+		          <a class="nav-link" href="../../Formulario-inscripcion/html_formularioE.php">Inscripcion</a>
 		        </li>
 		        <li class="nav-item" routerLinkActive="active">
 		            <a class="nav-link" href="#">Documentación<span class="sr-only">(current)</span></a>
+		          </li>
+		            <li class="nav-item" routerLinkActive="active">
+		            <a class="nav-link" href="#">Reportes</a>
+		          </li>
+		          <li class="nav-item" routerLinkActive="active">
+		            <a class="nav-link" href="../Usuarios/html_user.php">Usuarios</a>
 		          </li>
 		      </ul>
 		      <div class="form-inline my-2 my-lg-0">
@@ -74,12 +89,18 @@
 
 		<div class="container p-5" >
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="w-100 p-3">
 					<div class="card">
 						<div class="card-body">
-							<div class="form-inline my-4 my-md-8 p-4">
-								<input type="search" id="search" class="form-control mr-md-4" placeholder="Buscar..." name="">
+							<form id="revisar" class="form-inline my-2 my-lg-0 p-4">
+							<div class="form-group">
+								<input type="search" id="search" class="form-control mr-md-4" placeholder="Buscar..." name="">&nbsp; &nbsp;&nbsp; &nbsp;
+								&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+								<button class="btn btn-info" id="rev"   value="1"  onclick="cambio1();" type="submit">POR REVISAR</button>&nbsp; &nbsp;
+								<button class="btn btn-info" id="com" 	value="2"  onclick="cambio2();" type="submit">COMPLETOS</button>&nbsp;  &nbsp;
+								<button class="btn btn-info" id="incom" value="3"  onclick="cambio3();" type="submit">INCOMPLETOS</button>
 							</div>
+							</form>
 							<div class="form-group p-4" id="tabla">
 								<table class="table" id="tabla_form">
 									<thead class="thead-dark">
@@ -98,18 +119,18 @@
 											$aux = 0;
 										    $sql = "select C.p_nombre, C.s_nombre, C.p_ape, T.id_tramite, E.desc_estado, M.fecha, P.desc_partido, M.id_formulario ";
 										    $sql.= "from tramite T, estados E, formulario_inscripcion M, candidato C, partido P ";
-										    $sql.= "where C.id_partido = $id_p and T.id_estado = E.id_estado and T.id_formulario = M.id_formulario ";
+										    $sql.= "where T.id_estado = 5 and T.id_estado = E.id_estado and T.id_formulario = M.id_formulario ";
 										    $sql.= "and M.id_candidato = C.id_candidato and C.id_partido = P.id_partido;";
 										    $result = $conex->visualizar_datos($sql);
 
 										      if(empty($result)){ ?>
 										      <tr>
-										      <td></td>
-										      <td></td>
 										      <td>NO</td>
 										      <td>HAY</td>
 										      <td>INSCRIPCIONES</td>
-										      <td></td>
+										      <td>PENDIENTES</td>
+										      <td>POR</td>
+										      <td>REVISAR </td>
 										  	  </tr>
 										      <?php
 
@@ -130,19 +151,12 @@
 										      <td><?php echo $mostrar['fecha'] ?></td>
 										      <td><?php echo $cantidad; ?>/<?php echo $cant_rq; ?> </td>
 										      <td>
+										      
 										      		
-										      		<div class="form-group">
-
-											        <button class="btn btn-info"    id="details">
-											          <a style="text-decoration: none; color: #fff;" href="detallesC.php?id=<?php echo $mostrar['id_tramite']; ?>">
-											          Agregar
-											          </a> 
-											     	</button>  
-											        <!--<button class="btn btn-danger" id="accept">
-											          <a style="text-decoration: none; color: #fff;" href="detalles.php?id=<?php echo $mostrar['id_tramite']; ?>">
-											          Eliminar
-											          </a>
-											     	</button>  -->
+										      		<div class='form-group'>
+											        <a href="recibir.php?id= <?php echo $mostrar['id_tramite']; ?>">
+											        <button class='btn btn-secondary'> Recibir </button>
+											        </a>
 											        </div>
 											    
 										      </td>
