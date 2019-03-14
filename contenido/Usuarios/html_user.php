@@ -44,7 +44,7 @@ $conex = new ClsUser();
 <!-- MENU NAVEGADOR + CERRAR SESION -->
 <header> 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand">TRIBUNAL SUPREMO ELECTORAL</a>
+    <a class="navbar-brand"style="color: white;"><strong>TRIBUNAL SUPREMO ELECTORAL</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,13 +52,13 @@ $conex = new ClsUser();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="../principalA.php" >Inicio</a>
+          <a class="nav-link" href="../principal.php" >Inicio</a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
           <a class="nav-link" href="../Formulario-inscripcion/html_formularioE.php">Inscripcion</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="../Formulario-inscripcion/html_formularioE.php">Documentación</a>
+            <a class="nav-link" href="../Documentacion/Empleado/html_documentacionE.php">Documentación</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" href="../Reportes/R_main.php">Reportes</a>

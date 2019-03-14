@@ -61,7 +61,7 @@ if(isset($_SESSION['loginUser'])){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="#" >Inicio </a>
+          <a class="nav-link" href="../principal.php" >Inicio </a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
           <a class="nav-link" href="#">Inscripcion <span class="sr-only">(current)</span></a>
@@ -70,7 +70,7 @@ if(isset($_SESSION['loginUser'])){
             <a class="nav-link" href="../Documentacion/Empleado/html_documentacionE.php">Documentación</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">Reportes</a>
+            <a class="nav-link" href="../Reportes/R_main.php">Reportes</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" href="../Usuarios/html_user.php">Usuarios</a>

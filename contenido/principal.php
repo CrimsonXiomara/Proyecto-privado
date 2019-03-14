@@ -54,7 +54,7 @@ if(isset($_SESSION['loginUser'])){
 
  <?php 
  
- if($nivel == 1){ //NIVEL ADMINISTRADOR
+ if($nivel == 1){//NIVEL ADMINISTRADOR
 
  ?> 
   
@@ -64,10 +64,10 @@ if(isset($_SESSION['loginUser'])){
           <a class="nav-link" href="#" >Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
-          <a class="nav-link" href="Formulario-inscripcion/html_formularioA.php">Administrar Usuarios</a>
+          <a class="nav-link" href="Usuarios/Administrador/html_usuarios.php">Administrar Usuarios</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">Reportes</a>
+            <a class="nav-link" href="Reportes/R_main.php">Reportes</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" href="#">Configuración</a>
@@ -91,7 +91,7 @@ if(isset($_SESSION['loginUser'])){
             <a class="nav-link" href="#">Documentación</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">Reportes</a>
+            <a class="nav-link" href="Reportes/R_main.php">Reportes</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" href="Usuarios/html_user.php">Usuarios</a>

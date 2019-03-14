@@ -70,10 +70,10 @@
 		            <a class="nav-link" href="#">Documentación<span class="sr-only">(current)</span></a>
 		          </li>
 		            <li class="nav-item" routerLinkActive="active">
-		            <a class="nav-link" href="#">Reportes</a>
+		            <a class="nav-link" href="../../Reportes/R_main.php">Reportes</a>
 		          </li>
 		          <li class="nav-item" routerLinkActive="active">
-		            <a class="nav-link" href="../Usuarios/html_user.php">Usuarios</a>
+		            <a class="nav-link" href="../../Usuarios/html_user.php">Usuarios</a>
 		          </li>
 		      </ul>
 		      <div class="form-inline my-2 my-lg-0">

@@ -14,7 +14,7 @@
 
 	if(!empty($search)){
 
-		$sql = "select C.p_nombre, C.s_nombre, C.p_ape, T.id_tramite, E.desc_estado, E.id_estado, M.fecha, P.desc_partido, M.id_formulario ";
+		$sql = "select C.p_nombre, C.s_nombre, C.p_ape, T.id_tramite, E.desc_estado, E.id_estado, M.fecha, P.desc_partido, M.id_formulario, C.id_candidato ";
 		$sql.= "from tramite T, estados E, formulario_inscripcion M, candidato C, partido P ";
 		$sql.= "where P.desc_partido like '$search%' and C.id_partido = P.id_partido and M.id_candidato = C.id_candidato ";
 		$sql.= "and T.id_formulario = M.id_formulario and E.id_estado = T.id_estado;";
@@ -39,6 +39,11 @@
                     $html.= "<td>";
                     $html.= "<div class='form-group'>";
                     $html.= "<button class='btn btn-success'  value=".$mostrar['id_tramite']."> Aceptar </button>";
+                    $html.= "<button class='btn btn-info'    id=details'>";
+                    $html.= "<a style='text-decoration: none; color: white;' href='verpdf.php?id=".$mostrar['id_candidato']."' >";
+                    $html.= "Ver PDF";
+                    $html.= " </a> ";
+                    $html.= "</button> ";
                     $html.= "</div>";
                     $html.= "</td>";
                     $html.= "</tr>";
