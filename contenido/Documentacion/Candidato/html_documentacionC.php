@@ -29,6 +29,9 @@
 <html>
 <head>
 	<title>DOCUMENTACIÓN</title>
+
+	  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
 	  <script src="../../../js/jquery-3.1.1.min.js"></script>
 	  <script src="../../../js/bootstrap.min.js"></script>
 	  <script src="../../../js/verFormC.js"></script>

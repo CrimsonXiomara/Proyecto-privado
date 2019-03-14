@@ -4,12 +4,31 @@
 
 	$cls = new ClsConfig();
 
+
+	session_start();
+	if(isset($_SESSION['loginUser'])){
+		$l=0;
+	}else{
+		?>
+		
+		<script >
+	          alert("Tiene que iniciar Sesion para acceder a esta página");
+	          location.href ="../Login/html_login.php";
+	     </script>
+
+	     <?php
+	}
+
+
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>CONFIGURACIÓN</title>
+
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
 	<script src="../../js/jquery-3.1.1.min.js"></script>
 	<script src="../../js/bootstrap.min.js"></script>
@@ -35,21 +54,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="../../principal.php" >Inicio </a>
+          <a class="nav-link" href="../principal.php" >Inicio </a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
-          <a class="nav-link" href="#">Administrar Usuarios<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../Usuarios/Administrador/html_usuarios.php">Administrar Usuarios<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="../../Reportes/R_main.php">Reportes</a>
+            <a class="nav-link" href="../Reportes/R_main.php">Reportes</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="../../Configuracion/html_configuracion">Configuración</a>
+            <a class="nav-link" href="#">Configuración</a>
           </li>
            </ul>
       <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" hidden>
-        <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href = '../login/cerrarSesion.php'">Cerrar Sesión</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href = '../Login/cerrarSesion.php'">Cerrar Sesión</button>
       </div>
     </div>
   </nav>
@@ -72,6 +91,7 @@
 
 							
 					<div class="form-group p-4 col-sm-6" id="tabla">
+						<div id="alert1"></div>
 			            <table class="table" id="tabla_user">
 			              <thead class="thead-dark">
 			                <tr>

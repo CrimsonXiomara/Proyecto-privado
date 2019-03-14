@@ -17,7 +17,6 @@
 				//console.log(response);
 				$('#alerta').html(response);
 				LlenarTabla();
-				//console.log(response);
 			});
 
 			e.preventDefault();
@@ -39,6 +38,26 @@
 		});
 		}
 
+
+
+
+		$(document).on('click', '.delete-b', function(){
+
+			if(confirm('Estas seguro de querer eliminarlo?'))
+			{	
+
+					let element = $(this)[0].parentElement.parentElement;
+					let id = $(element).attr('taskId');
+					$.post('delete.php',{id}, function(response){
+							$('#alert1').html(response);
+							LlenarTabla();
+					});
+					
+
+			}
+
+			
+		});
 
 
 

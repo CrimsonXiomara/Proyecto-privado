@@ -13,10 +13,10 @@
 		foreach ($result as $show) {
 			
 
-			$html = "<tr>";
+			$html = "<tr taskID ='".$show['id_rq']."'>";
 			$html.= "<td>".$show['id_rq']." </td>";
 			$html.= "<td>".$show['desc_rq']." </td>";
-			$html.= "<td><button class='btn btn-danger' type='submit'>";
+			$html.= "<td><button class='delete-b btn btn-danger'>";
 			$html.= "<i class='fas fa-trash-alt'></i>";
 			$html.= "Borrar";
 			$html.= "</button></td>";

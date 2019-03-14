@@ -70,7 +70,7 @@ if(isset($_SESSION['loginUser'])){
             <a class="nav-link" href="Reportes/R_main.php">Reportes</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">Configuración</a>
+            <a class="nav-link" href="Configuracion/html_configuracion.php">Configuración</a>
           </li>
 
 <?php 

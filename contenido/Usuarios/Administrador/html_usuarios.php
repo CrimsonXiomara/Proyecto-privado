@@ -3,6 +3,21 @@
 
 	$cls = new ClsUser();
 
+
+	session_start();
+	if(isset($_SESSION['loginUser'])){
+		$l=0;
+	}else{
+		?>
+		
+		<script >
+	          alert("Tiene que iniciar Sesion para acceder a esta página");
+	          location.href ="../Login/html_login.php";
+	     </script>
+
+	     <?php
+	}
+
 ?>
 
 
