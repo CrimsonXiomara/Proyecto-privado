@@ -1,6 +1,7 @@
 <?php
 
 	include("../../clases/ClsUsuarios.php");
+	header("Content-Type: text/html;charset=utf-8");
 
 	$conexion = new ClsUser();
 

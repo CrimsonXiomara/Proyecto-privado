@@ -1,6 +1,7 @@
 <?php 
 
 	include("../../clases/ClsverForms.php");
+	header("Content-Type: text/html;charset=utf-8");
 
 	$clsver = new ClsverForms();
 

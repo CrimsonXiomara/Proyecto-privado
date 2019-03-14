@@ -1,6 +1,7 @@
 <?php 
 
 	require_once("../../clases/ClsConfiguracion.php");
+	header("Content-Type: text/html;charset=utf-8");
 
 	$cls = new ClsConfig();
 

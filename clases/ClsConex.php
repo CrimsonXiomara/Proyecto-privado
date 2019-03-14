@@ -14,9 +14,11 @@ class ClsConex{
 		$contrasena = $this->contrasena;
 		
 		$conexion = new PDO("mysql:host=$servidor; dbname=$base_datos; protocol=onsoctcp; EnablescrollableCursors=1;", $usuario, $contrasena);
+		$conexion->exec("set names utf8");
 		
 		if($conexion){
 			$this->conn = $conexion;
+
 			}else{
 			return false;
 		}

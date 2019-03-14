@@ -2,6 +2,7 @@
 
 	 include("../../../clases/ClsverForms.php");
 	 include("../archivoJsF.php");
+	 header("Content-Type: text/html;charset=utf-8");
 
 	 session_start();
 	$usuario_actual = $_SESSION['loginUser'];
@@ -54,6 +55,8 @@
 <html>
 <head>
 	<title>Detalles</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	
 	<!-- JS -->
   <script src="../../../js/jquery-3.1.1.min.js"></script>
   <script src="../../../js/bootstrap.min.js"></script>

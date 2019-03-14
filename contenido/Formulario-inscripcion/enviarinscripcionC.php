@@ -1,6 +1,7 @@
 <?php 
 
 	include("../../clases/ClsInscripcion.php");
+	header("Content-Type: text/html;charset=utf-8");
 
 
 	$clsIns = new ClsInscripcion();
