@@ -17,6 +17,35 @@
 
 
 
+.padre {
+  padding: 0 1rem;
+  margin: 1rem;
+}
 
+.ingreso {
+  
+  /* IMPORTANTE */
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.ingresoE {
+  
+  /* IMPORTANTE */
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.hijo2 {
+  
+  /* IMPORTANTE */
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 

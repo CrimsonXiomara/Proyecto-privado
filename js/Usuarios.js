@@ -16,8 +16,22 @@
 			//console.log("posible");
 			$.post('edit.php', postData, function(response){
 
-				alert(response);
-				location.href = "../Administrador/html_usuarios.php";
+				var res = response;
+
+				if(res == 1)
+				{
+					alert("NO PUEDE DEJAR NINGUN CAMPO VACIO.");
+
+				}else if(res == 2)
+				{
+					alert("EL NOMBRE DEL USUARIO NO PUEDE CONTENER NUMEROS.");
+
+				}else{
+					alert(response);
+					location.href = "../Administrador/html_usuarios.php";
+				}
+
+				
 				//$('#contenido_tabla').html(response);
 				//console.log(response);
 			});

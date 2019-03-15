@@ -38,7 +38,7 @@
                     $html.= "<td>".$cantidad."/".$cant_rq." </td>";
                     $html.= "<td>";
                     $html.= "<div class='form-group'>";
-                    $html.= "<button class='btn btn-success'  value=".$mostrar['id_tramite']."> Aceptar </button>";
+                    $html.= "<button class='btn btn-success'  value=".$mostrar['id_tramite']."> Aceptar </button> &nbsp;";
                     $html.= "<button class='btn btn-info'    id=details'>";
                     $html.= "<a style='text-decoration: none; color: white;' href='verpdf.php?id=".$mostrar['id_candidato']."' >";
                     $html.= "Ver PDF";

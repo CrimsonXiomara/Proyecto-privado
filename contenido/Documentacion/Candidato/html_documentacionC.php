@@ -99,7 +99,7 @@
 									<tbody id="contenido_tabla">
 										<?php 
 											$aux = 0;
-										    $sql = "select C.p_nombre, C.s_nombre, C.p_ape, T.id_tramite, E.desc_estado, M.fecha, P.desc_partido, M.id_formulario ";
+										    $sql = "select C.p_nombre, C.s_nombre, C.p_ape, T.id_tramite, E.desc_estado, M.fecha, P.desc_partido, M.id_formulario, E.id_estado ";
 										    $sql.= "from tramite T, estados E, formulario_inscripcion M, candidato C, partido P ";
 										    $sql.= "where C.id_partido = $id_p and T.id_estado = E.id_estado and T.id_formulario = M.id_formulario ";
 										    $sql.= "and M.id_candidato = C.id_candidato and C.id_partido = P.id_partido;";
@@ -127,7 +127,7 @@
 
 										    <tr>
 										      <td><?php echo $aux ?></td>
-										      <td><?php echo $mostrar['p_nombre']." ".$mostrar['s_nombre'] ?></td>
+										      <td><?php echo $mostrar['p_nombre']." ".$mostrar['s_nombre']." ".$mostrar['p_ape'] ?></td>
 										      <td><?php echo $mostrar['desc_partido'] ?></td>
 										      <td><?php echo $mostrar['desc_estado'] ?></td>
 										      <td><?php echo $mostrar['fecha'] ?></td>
@@ -135,6 +135,19 @@
 										      <td>
 										      		
 										      		<div class="form-group">
+
+										      		<?php 
+										      			if($mostrar['id_estado'] == 1){
+
+										      		?>
+
+										      		 	<button class="btn btn-success"    id="details" disabled>
+												          Completo												          
+												     	</button>
+
+										      		<?php
+										      			}else{
+										      		?>
 
 											        <button class="btn btn-info"    id="details">
 											          <a style="text-decoration: none; color: #fff;" href="detallesC.php?id=<?php echo $mostrar['id_tramite']; ?>">
@@ -151,6 +164,7 @@
 										      </td>
 										  </tr>
 										  <?php 
+										  		}
 										      }
 										     }
 										    ?>

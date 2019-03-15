@@ -51,7 +51,7 @@
 
 
 	if($_FILES["archivo"]["error"]>0){
-		echo "Error al cargar archivo";
+		echo 1;
 	}else{
 
 		$permitidos = array("application/pdf");
@@ -95,12 +95,12 @@
 						if($rest){
 							echo "ARCHIVO GUARDADO";
 						}else{
-							echo "ERROR AL GUARDAR ARCHIVO";
+							echo 2;
 						}
 
 
 			}else{
-				echo "ARCHIVO YA EXISTE";
+				echo 3;
 			}
 
 
@@ -109,7 +109,7 @@
 
 
 		}else{
-			echo "Archivo no Permitido o Excede el tamaño";
+			echo 4;
 		}
 
 	}

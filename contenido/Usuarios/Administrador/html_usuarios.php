@@ -122,7 +122,7 @@
 								            </button>
 
 								            <button class="btn btn-danger">
-								            <i class="fas fa-user-minus"></i>
+								            <i class='fas fa-trash-alt'></i>
 								            <a style="text-decoration: none; color: #fff;" href="pregunta.php?id=<?php echo $show['id_user']; ?>">
 								            Borrar </a>
 								            </button>

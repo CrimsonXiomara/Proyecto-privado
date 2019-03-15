@@ -21,42 +21,46 @@
 
 
 
+			$(document).on('click', '.detalle', function(e){
 
-			//GUARDAR CAMBIOS, EN DETALLES
-			$('#guardar_r').submit( function(e){
+				var form = new FormData($('#form-detalle')[0]);
+				
+				$.ajax ({
+					data: form,
+					url: "Guardar_cambiosC.php",
+					type: "POST",
+					contentType: false,
+					processData: false,
+					success: function(response){
 
+						switch(response){
+							case '1':
+								alert("TIENE QUE ADJUNTAR EL ARCHIVO PDF");
+								break;
 
+							case '2':
+								alert("ERROR AL GUARDAR ARCHIVO");
+								break;
 
-				const postData={
-					foto: 		document.getElementById("customCheck1").checked,
-			  		partida:	document.getElementById("customCheck2").checked,
-			  		constancia: document.getElementById("customCheck3").checked,
-			  		penal: 		document.getElementById("customCheck4").checked,
-			  		poli: 		document.getElementById("customCheck5").checked,
-			  		ciudadano: 	document.getElementById("customCheck6").checked,
-			  		tciudadano: document.getElementById("agregar_no").value,
-			  		tramite: document.getElementById("id_formulario").value
-				};
+							case '3':
+								alert("ARCHIVO YA EXISTE");
+								break;
 
-			
-				//console.log(postData);
-			$.post('Guardar_cambiosC.php', postData, function(response){
+							case '4':
+								alert("ARCHIVO NO PERMITIDO O EXCEDE EL TAMAÑO");
+								break;
 
-				alert(response);
-				location.href = ".. /Candidatos/index_verFormulariosC.php";
-				//console.log(response);
+							default:
+								alert("SE HAN MODIFICADO LOS DATOS");
+								location.href = "../Candidato/html_documentacionC.php";
+								break;
+						}//END SWITCH
+
+					}
+
+				});
+				e.preventDefault();
 			});
-			
-			e.preventDefault();
-
-			});
-
-
-
-
-			/*function mensaje($msm){
-				alert($msm);
-			}*/
 
 
 

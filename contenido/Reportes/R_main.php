@@ -71,7 +71,7 @@ if(isset($_SESSION['loginUser'])){
 		          <a class="nav-link" href="../principal.php" >Inicio </a>
 		        </li>
 		        <li class="nav-item" routerLinkActive="active"> 
-		          <a class="nav-link" href="#">Administrar Usuarios<span class="sr-only">(current)</span></a>
+		          <a class="nav-link" href="../Usuarios/Administrador/html_usuarios.php">Administrar Usuarios<span class="sr-only">(current)</span></a>
 		        </li>
 		        <li class="nav-item" routerLinkActive="active">
 		            <a class="nav-link" href="#">Reportes</a>

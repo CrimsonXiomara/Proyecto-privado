@@ -11,9 +11,10 @@
 
 	$id_form = $clsver->no_formulario($id_tramite);
 	$cantidad = $clsver->cant_documentos($id_form);
+	$req = $clsver->cant_doc_requisitos();
 
-	if($cantidad == 6){ $res = $clsver->update_estado_tramite($id_tramite, 1); }
-	if($cantidad < 6){ $res = $clsver->update_estado_tramite($id_tramite, 2); }
+	if($cantidad == $req){ $res = $clsver->update_estado_tramite($id_tramite, 1); }
+	if($cantidad < $req){ $res = $clsver->update_estado_tramite($id_tramite, 2); }
 
 
 	if($res){

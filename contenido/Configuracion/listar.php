@@ -18,7 +18,6 @@
 			$html.= "<td>".$show['desc_rq']." </td>";
 			$html.= "<td><button class='delete-b btn btn-danger'>";
 			$html.= "<i class='fas fa-trash-alt'></i>";
-			$html.= "Borrar";
 			$html.= "</button></td>";
 			$html.= "</tr>";
 

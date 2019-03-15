@@ -11,14 +11,6 @@ include('ClsConex.php');
 		
 		function cant_documentos($tramite){
 
-			$total_n = 0;
-			$sql1 = "select count(*) as total from requisito;";
-            $rs  = $this->exec_query($sql1);
-            foreach ($rs as $lista) {
-                  $total_n = $lista['total'];
-                }
-
-
 			$sql = "select count(R.id_rq) tot ";
 			$sql.= "from form_requisito R, formulario_inscripcion F, tramite T ";
 			$sql.= "where T.id_tramite = $tramite and T.id_formulario = F.id_formulario and R.id_formulario = F.id_formulario;";

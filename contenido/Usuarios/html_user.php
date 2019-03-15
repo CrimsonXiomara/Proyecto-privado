@@ -99,7 +99,7 @@ $conex = new ClsUser();
       			<div class="card-header bg-success" style="text-align: center;"><label style="font-family: verdana; font-weight: bold;">CREAR NUEVO USUARIO</label></div>
       			<center>
       			<div class="card-body">
-      				<form id="form-nuevo">
+      				<form id="form-nuevo" autocomplete="off">
 
       					<div class="form-group row">
 						    <label for="nom_user" class="col-sm-5 col-form-label">Usuario</label>
@@ -112,7 +112,7 @@ $conex = new ClsUser();
 						  <div class="form-group row">
 						    <label for="password" class="col-sm-5 col-form-label">Contraseña</label>
 						    <div class="col-sm-5">
-						      <input type="password" class="form-control" id="password" placeholder="Contraseña">
+						      <input type="text" class="form-control" id="password" placeholder="Contraseña">
 						    </div>
 						  </div>
 

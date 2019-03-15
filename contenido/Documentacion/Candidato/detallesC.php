@@ -112,7 +112,7 @@
 				<div class="col-lg-6">
 					<div class="card">
 						<div class="card-body">
-							<form method="POST" action="Guardar_cambiosC.php" enctype="multipart/form-data" autocomplete="off" >
+							<form method="POST" id="form-detalle" class="form-detalle" enctype="multipart/form-data" autocomplete="off" >
 								<table>
 
 										<?php 
@@ -172,7 +172,7 @@
 								<input type="text" value="<?php echo $id_tramite ?>" id="tramite" name="tramite" hidden>
 								<center>
 								<div class="form-group">
-									<button class="btn btn-secondary" type="submit">Agregar</button>
+									<button class="detalle btn btn-secondary" type="submit">Agregar</button>
 									<button class="btn btn-warning"   id="btn_regresar"><a href="html_documentacionC.php" style="text-decoration: none; color: #fff;">Regresar</a></button>
 								</div>
 								</center>

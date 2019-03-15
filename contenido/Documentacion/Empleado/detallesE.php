@@ -60,7 +60,7 @@
 	<!-- JS -->
   <script src="../../../js/jquery-3.1.1.min.js"></script>
   <script src="../../../js/bootstrap.min.js"></script>
-  <script src="../../../js/verFormC.js"></script>
+  <script src="../../../js/verForm.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <!-- CSS -->
@@ -109,7 +109,7 @@
 				<div class="col-lg-6">
 					<div class="card">
 						<div class="card-body">
-							<form method="POST" action="Guardar_cambiosE.php" enctype="multipart/form-data" autocomplete="off" >
+							<form method="POST" id="form-d" class="form-d" enctype="multipart/form-data" autocomplete="off" >
 								<table>
 
 										<?php 
@@ -169,7 +169,7 @@
 								<input type="text" value="<?php echo $id_tramite ?>" id="tramite" name="tramite" hidden>
 								<center>
 								<div class="form-group">
-									<button class="btn btn-secondary" type="submit">Agregar</button>
+									<button class="detalles btn btn-secondary" type="submit">Agregar</button>
 									<button class="btn btn-warning"   id="btn_regresar"><a href="html_documentacionE.php" style="text-decoration: none; color: #fff;">Regresar</a></button>
 								</div>
 								</center>

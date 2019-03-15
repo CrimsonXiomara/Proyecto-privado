@@ -104,13 +104,51 @@
 
 
 
-			/*function mensaje($msm){
-				alert($msm);
-			}*/
+			$(document).on('click', '.detalles', function(e){
+
+				var form = new FormData($('#form-d')[0]);
+				
+				$.ajax ({
+					data: form,
+					url: "Guardar_cambiosE.php",
+					type: "POST",
+					contentType: false,
+					processData: false,
+					success: function(response){
+
+						switch(response){
+							case '1':
+								alert("TIENE QUE ADJUNTAR EL ARCHIVO PDF");
+								break;
+
+							case '2':
+								alert("ERROR AL GUARDAR ARCHIVO");
+								break;
+
+							case '3':
+								alert("ARCHIVO YA EXISTE");
+								break;
+
+							case '4':
+								alert("ARCHIVO NO PERMITIDO O EXCEDE EL TAMAÑO");
+								break;
+
+							default:
+								alert("SE HAN MODIFICADO LOS DATOS");
+								location.href = "../Empleado/html_documentacionE.php";
+								break;
+						}//END SWITCH
+
+					}
+
+				});
+				e.preventDefault();
+			});
 
 
 
-	});
+
+	});//END
 
 
 

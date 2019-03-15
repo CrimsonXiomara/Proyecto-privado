@@ -107,7 +107,7 @@ if(isset($_SESSION['loginUser'])){
           <div class="card-header bg-dark" style="text-align: center;"><label style="font-family: verdana; font-weight: bold; color: #fff;">FORMULARIO DE INSCRIPCIÓN</label></div>
           <div class="card-body">
 
-            <form  method="POST" action="enviarinscripcionE.php" enctype="multipart/form-data" autocomplete=""> <!--INICIO FORM id="form-inscripcion"-->
+            <form class="form-inscripcionE" id="form-inscripcionE"  method="POST" enctype="multipart/form-data" autocomplete=""> <!--INICIO FORM -->
 
               <div class="card p-2">
               <div class="card-body">
@@ -357,9 +357,9 @@ if(isset($_SESSION['loginUser'])){
 
                 <div class="form-row p-3" style="align-items: center;">
                   
-                    <button class="btn btn-success btn-lg" type="submit"> INGRESAR INSCRIPCION </button>&nbsp;  &nbsp; 
+                    <button class="ingresoE btn btn-success btn-lg" type="submit"> INGRESAR INSCRIPCION </button>&nbsp;  &nbsp; 
 
-                    <button class="btn btn-warning btn-lg" type="button">
+                    <button class="hijo2 btn btn-warning btn-lg" type="button">
                      <a href="../principal.php" style="text-decoration: none; color: white;">CANCELAR</a>
                     </button>
               

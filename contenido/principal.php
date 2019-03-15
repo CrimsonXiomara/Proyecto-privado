@@ -88,7 +88,7 @@ if(isset($_SESSION['loginUser'])){
           <a class="nav-link" href="Formulario-inscripcion/html_formularioE.php">Inscripcion</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">Documentación</a>
+            <a class="nav-link" href="Documentacion/Empleado/html_documentacionE.php">Documentación</a>
           </li>
             <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" href="Reportes/R_main.php">Reportes</a>
@@ -108,7 +108,7 @@ if(isset($_SESSION['loginUser'])){
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="../principal.php">Inicio </a>
+          <a class="nav-link" href="#">Inicio </a>
         </li>
         <li class="nav-item" routerLinkActive="active"> 
           <a class="nav-link" href="Formulario-inscripcion/html_formularioC.php">Inscripcion<span class="sr-only">(current)</span></a>

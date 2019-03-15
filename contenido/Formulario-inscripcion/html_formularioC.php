@@ -101,7 +101,7 @@ if(isset($_SESSION['loginUser'])){
           <div class="card-header bg-dark" style="text-align: center;"><label style="font-family: verdana; font-weight: bold; color: #fff;">FORMULARIO DE INSCRIPCIÓN</label></div>
           <div class="card-body">
 
-            <form  method="POST" action="enviarinscripcionC.php" enctype="multipart/form-data" autocomplete=""> <!--INICIO FORM id="form-inscripcion"-->
+            <form class="form-inscripcion" id="form-i" method="POST" enctype="multipart/form-data" autocomplete=""> <!--INICIO FORM id="form-inscripcion"   action="enviarinscripcionC.php" -->
 
               <div class="card p-2">
               <div class="card-body">
@@ -110,7 +110,7 @@ if(isset($_SESSION['loginUser'])){
               <label for="nomCompleto">Nombre Completo</label>
               <div class="form-row">
                 <div class="form-group col-sm-3">
-                  <input type="text" class="form-control" id="nom1" name="nom1" placeholder="Primer Nombre">
+                  <input type="text" class="form-control" id="nom1" name="nom1" placeholder="Primer Nombre" >
                 </div>
                 <div class="form-group col-sm-3">
                   <input type="text" class="form-control" id="nom2" name="nom2" placeholder="Segundo Nombre" >
@@ -153,7 +153,7 @@ if(isset($_SESSION['loginUser'])){
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01">Puesto electoral</label>
                 </div>
-                <select class="custom-select" id="inputGroupSelect01" name="puesto" onchange="cambio_fecha()" required>
+                <select class="custom-select" id="inputGroupSelect01" name="puesto" onchange="cambio_fecha()" >
                   <option value="0" selected>Choose...</option>
 
                   <?php 
@@ -177,7 +177,7 @@ if(isset($_SESSION['loginUser'])){
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01">Departamento</label>
                 </div>
-                <select class="custom-select" id="dep" name="dep" onchange="cambio_municipio();" required>
+                <select class="custom-select" id="dep" name="dep" onchange="cambio_municipio();" >
                   <option value="0" selected>Choose...</option>
 
                   <?php 
@@ -201,7 +201,7 @@ if(isset($_SESSION['loginUser'])){
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01">Municipio</label>
                 </div>
-                <select class="custom-select" id="muni" name="muni"  required >
+                <select class="custom-select" id="muni" name="muni" >
                   <option value="0" selected>Choose...</option>
 
                   <?php 
@@ -233,7 +233,7 @@ if(isset($_SESSION['loginUser'])){
                   &nbsp;  &nbsp;
                    <div class="form-group col-md-4">
                     <label for="tel">Fecha de Nacimiento</label>
-                    <input type="date" class="form-control" min="1962-01-01" max="1975-01-01" id="fecha" name="fecha" required>
+                    <input type="date" class="form-control" min="1962-01-01" max="1975-01-01" id="fecha" name="fecha" >
                   </div>
                 </div>
 
@@ -307,11 +307,12 @@ if(isset($_SESSION['loginUser'])){
 
 
             <div class="form-row p-3">
-              <input type="file" class="form-control" name="archivo" id="archivo"> 
+              <input type="file" class="form-control" name="archivo" id="archivo" > 
             </div> <!--CIERRE DIV DE ARCHIVO PDF-->
             
                 
                 <input type="text" id="total_requisitos" name="total_requisitos"value="<?php echo $total_n ?>" hidden> <!--TOTAL DE REQUISITOS-->
+
 
         </div>
         </div><!--END CARD-->
@@ -319,16 +320,14 @@ if(isset($_SESSION['loginUser'])){
 
 
             <br>
-
-                <div class="form-row p-3" style="align-items: center;">
+                 <div class="padre form-row p-3" style="align-items: center;">
                   
-                    <button class="btn btn-success btn-lg" type="submit"> INGRESAR INSCRIPCION </button>&nbsp;  &nbsp; 
+                    <button class="ingreso btn btn-success btn-lg" type="submit"> INGRESAR INSCRIPCION </button>&nbsp;  &nbsp; 
 
-                    <button class="btn btn-warning btn-lg" type="button">
+                    <button class="hijo2 btn btn-warning btn-lg" type="button">
                      <a href="../principal.php" style="text-decoration: none; color: white;">CANCELAR</a>
                     </button>
-              
-            </div>
+                </div>
 
             </form>
           </div>
