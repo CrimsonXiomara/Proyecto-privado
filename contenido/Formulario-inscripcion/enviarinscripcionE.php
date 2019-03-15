@@ -200,7 +200,7 @@
 
 
 					$permitidos = array("application/pdf");
-					$limite_kb = 200;
+					$limite_kb = 30000;
 
 					if(in_array($_FILES["archivo"]["type"], $permitidos) && $_FILES["archivo"]["size"] <= $limite_kb * 1024){
 

@@ -100,7 +100,9 @@ function filtro_revisar($estado){
         $html.= "<td>".$cantidad."/".$cant_rq." </td>";
         $html.= "<td>";
         $html.= "<div class='form-group'>";
-        $html.= "<button class='btn btn-success'  value=".$mostrar['id_tramite']."> Aceptar </button> &nbsp; &nbsp;";
+        $html.= "<button class='btn btn-success'> ";
+        $html.= "<a style='text-decoration: none; color: white;' href='VerInfo.php?id=".$mostrar['id_candidato']."' >";
+        $html.= "Información </a></button> &nbsp; &nbsp;";
         $html.= "<button class='btn btn-info'    id=details'>";
         $html.= "<a style='text-decoration: none; color: white;' href='verpdf.php?id=".$mostrar['id_candidato']."' >";
         $html.= "Ver PDF";
